@@ -1,0 +1,150 @@
+.about-section {
+  position: relative;
+  background: radial-gradient(circle at 50% 10%, #1a1e15 0%, #0d0e0a 60%, #070805 100%);
+  padding: 120px 80px 100px;
+  min-height: 80vh;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 70px;
+}
+
+.section-kicker {
+  font-size: 11px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: #cbb387;
+  font-weight: 600;
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 46px;
+  letter-spacing: 0.06em;
+  font-weight: 400;
+  line-height: 1.25;
+  color: #f7f4ed;
+  margin-bottom: 20px;
+}
+
+.section-title span {
+  font-style: italic;
+  color: #a3b18a;
+}
+
+.section-subtitle {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #a6a297;
+  font-weight: 300;
+}
+
+.journey-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 1280px;
+  margin: 0 auto 70px;
+}
+
+.journey-card {
+  background: rgba(26, 31, 21, 0.4);
+  border: 1px solid rgba(203, 179, 135, 0.15);
+  border-radius: 20px;
+  padding: 36px 26px;
+  backdrop-filter: blur(10px);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 310px;
+}
+
+.journey-card:hover {
+  transform: translateY(-8px);
+  background: rgba(36, 44, 29, 0.6);
+  border-color: rgba(203, 179, 135, 0.45);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.step-number {
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  color: #cbb387;
+  font-weight: 700;
+}
+
+.card-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(203, 179, 135, 0.08);
+  border: 1px solid rgba(203, 179, 135, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #cbb387;
+  font-size: 14px;
+}
+
+.card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  letter-spacing: 0.05em;
+  margin-bottom: 10px;
+  color: #f7f4ed;
+}
+
+.card-subtitle {
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #8da173;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.card-desc {
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: #beb8ab;
+  font-weight: 300;
+}
+
+.about-quote-box {
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 40px 30px;
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(75, 88, 58, 0.15) 0%, rgba(13, 14, 10, 0.4) 100%);
+  border: 1px solid rgba(203, 179, 135, 0.2);
+}
+
+.about-quote-box p {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-style: italic;
+  color: #dfd8c8;
+  line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+  .about-section { padding-left: 30px; padding-right: 30px; }
+  .journey-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 640px) {
+  .journey-grid { grid-template-columns: 1fr; }
+}

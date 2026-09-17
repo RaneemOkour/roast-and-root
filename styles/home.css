@@ -1,0 +1,225 @@
+.hero-wrapper {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 60% 55%, rgba(0,0,0,0) 0%, rgba(13,15,10,0.5) 65%, rgba(10,11,8,0.92) 100%),
+    linear-gradient(to right, rgba(10,11,8,0.85) 0%, rgba(10,11,8,0.15) 50%, rgba(10,11,8,0.65) 100%),
+    url('../images/roast-espresso-flow.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+.hero-container {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 80px 32px;
+}
+
+main.hero-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 0;
+}
+
+.hero-text {
+  max-width: 460px;
+}
+
+.tagline {
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #cbb387;
+  font-weight: 600;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.hero-text h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 76px;
+  line-height: 1.05;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  margin-bottom: 22px;
+  color: #f7f4ed;
+}
+
+.hero-text h1 span {
+  font-style: italic;
+  color: #8da173;
+  font-weight: 300;
+}
+
+.hero-text p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #c4bfb2;
+  margin-bottom: 34px;
+  font-weight: 300;
+  max-width: 360px;
+}
+
+.btn-discover {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  background-color: #4b583a;
+  color: #f7f4ed;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 999px;
+  font-size: 13.5px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+  transition: background-color 0.2s ease;
+}
+
+.btn-discover:hover {
+  background-color: #586844;
+}
+
+.stepper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  margin-right: -20px;
+}
+
+.step-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.step-icon {
+  font-size: 14px;
+  color: #797467;
+  transition: color 0.2s ease;
+}
+
+.step-title {
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #797467;
+  transition: color 0.2s ease;
+}
+
+.step-separator {
+  width: 1px;
+  height: 24px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.step-item.active .step-icon,
+.step-item.active .step-title {
+  color: #dfd8c8;
+  font-weight: 600;
+}
+
+footer.hero-footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #8f8b80;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.mouse-icon {
+  width: 14px;
+  height: 22px;
+  border: 1.5px solid #8f8b80;
+  border-radius: 10px;
+  position: relative;
+}
+
+.mouse-wheel {
+  width: 2px;
+  height: 4px;
+  background: #cbb387;
+  border-radius: 1px;
+  position: absolute;
+  top: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.creative-banner {
+  position: relative;
+  padding: 130px 40px;
+  text-align: center;
+  background-image: 
+    linear-gradient(to bottom, rgba(8,9,6,0.85) 0%, rgba(8,9,6,0.4) 50%, rgba(6,7,4,0.95) 100%),
+    url('https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=1920&q=80');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  border-top: 1px solid rgba(203, 179, 135, 0.12);
+  border-bottom: 1px solid rgba(203, 179, 135, 0.12);
+}
+
+.creative-banner h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 56px;
+  letter-spacing: 0.1em;
+  line-height: 1.15;
+  color: #f7f4ed;
+  margin-bottom: 24px;
+}
+
+.creative-banner p {
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #cbb387;
+  margin-bottom: 20px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.social-links a {
+  color: #beb8ab;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  transition: color 0.25s ease;
+}
+
+.social-links a:hover {
+  color: #dfd8c8;
+  text-decoration: underline;
+}
+
+@media (max-width: 1024px) {
+  .hero-container { padding-left: 30px; padding-right: 30px; }
+  .hero-text h1 { font-size: 54px; }
+  main.hero-main { flex-direction: column; align-items: flex-start; gap: 40px; }
+  .stepper { display: none; }
+}

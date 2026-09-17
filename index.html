@@ -1,98 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Roast & Root</title>
-        <link rel="stylesheet" href="./styles/global.css">
-    </head>
-    <body>
-        <header>
-            <a href="index.html">
-                <p>🌿 <strong>ROAST & ROOT</strong></p>
-                <p><small>Coffee · Nature · You</small></p>
-            </a>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="./pages/about.html">About</a></li>
-                    <li><a href="./pages/menu.html">Menu</a></li>
-                    <li><a href="./pages/gallery.html">Gallery</a></li>
-                    <li><a href="./pages/contact.html">Contact</a></li>
-                </ul>
-            </nav>
-            <div>
-                <button type="button" aria-label="Open menu">☰</button>
-                <button type="button" aria-label="Search">🔍</button>
-                <button type="button" aria-label="Cart">🛒</button>
-                <button type="button" aria-label="User account">👤</button>
-                <a href="./pages/menu.html" class="button">Order Now</a>
-            </div>
-            
-        </header>
-        <main>
-            <!-- Hero Section -->
-            <section>
-                <div>
-                    <p><small>PREMIUM COFFEE EXPERIENCE</small></p>
-                    <h1>Rooted in<br><em>Every Sip.</em></h1>
-                    <p>From carefully selected beans to your favorite cup.</p>
-                    <a href="./pages/about.html">Discover Our Story →</a>
-                </div>
-                <!-- Journey -->
-                <aside>
-                    <ol>
-                        <li>🌱 BEANS</li>
-                        <li>🔥 ROAST</li>
-                        <li>💧 BREW</li>
-                        <li>☕ YOU</li>
-                    </ol>
-                </aside>
-            </section>
-            <!-- From Beans to Cup-->
-             <section id="journey">
-                <h2>The Journey</h2>
-                <p>From Beans to Cup</p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roast & Root — Rooted in Every Sip</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles/global.css">
+  <link rel="stylesheet" href="styles/home.css">
+</head>
+<body>
 
-                <ul>
-                    <li>
-                        <h3>01 - BEANS</h3>
-                        <p>Carefully sourced</p>
-                    </li>
-                    <li>
-                        <h3>02 - ROAST</h3>
-                        <p>Crafted with precision</p>
-                    </li>
-                    <li>
-                        <h3>03 - BREW</h3>
-                        <p>Prepared with intention</p>
-                    </li>
-                    <li>
-                        <h3>04 - YOU</h3>
-                        <p>Made for your moment</p>
-                    </li>
-                </ul>
-             </section>
-        </main>
-        <!--Global Footer-->
-        <footer>
-            <div>
-                <p>🌿 <strong>ROAST & ROOT</strong></p>
-                <p><small>Coffee · Nature · You</small></p>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="./pages/about.html">About</a></li>
-                    <li><a href="./pages/menu.html">Menu</a></li>
-                    <li><a href="./pages/gallery.html">Gallery</a></li>
-                    <li><a href="./pages/contact.html">Contact</a></li>
-                </ul>
-            </nav>
-            <div>
-                <p>GOOD COFFEE. BETTER CONNECTION.</p>
-                <p><small>@ 2024 Roast & Root. All rights reserved.</small></p>
-            </div>
+  <div class="hero-wrapper" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-container">
+      <header>
+        <a href="index.html" class="brand">
+          <div class="brand-logo"><i class="fa-brands fa-pagelines"></i></div>
+          <div class="brand-text">
+            <h2>Roast & Root</h2>
+            <span>Coffee • Nature • You</span>
+          </div>
+        </a>
 
-    </body>
+        <nav>
+          <a href="index.html" class="active">Home</a>
+          <a href="pages/about.html">About</a>
+          <a href="pages/menu.html">Menu</a>
+          <a href="pages/gallery.html">Gallery</a>
+          <a href="pages/contact.html">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <div class="cart-trigger-wrapper" onclick="toggleCart()">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span class="cart-badge" id="cartBadge">0</span>
+          </div>
+          <a href="pages/menu.html" class="btn-order">Order Now</a>
+        </div>
+      </header>
+
+      <main class="hero-main">
+        <div class="hero-text">
+          <span class="tagline">Premium Coffee Experience</span>
+          <h1>Rooted in <br /><span>Every</span> Sip.</h1>
+          <p>From carefully selected beans to your favorite cup.</p>
+          <a href="pages/about.html" class="btn-discover">
+            <span>Discover Our Story</span>
+            <i class="fa-solid fa-arrow-right-long"></i>
+          </a>
+        </div>
+
+        <div class="stepper">
+          <div class="step-item">
+            <i class="fa-solid fa-seedling step-icon"></i>
+            <span class="step-title">BEANS</span>
+          </div>
+          <div class="step-separator"></div>
+          <div class="step-item">
+            <i class="fa-solid fa-fire-flame-curved step-icon"></i>
+            <span class="step-title">ROAST</span>
+          </div>
+          <div class="step-separator"></div>
+          <div class="step-item">
+            <i class="fa-solid fa-droplet step-icon"></i>
+            <span class="step-title">BREW</span>
+          </div>
+          <div class="step-separator"></div>
+          <div class="step-item active">
+            <i class="fa-solid fa-mug-saucer step-icon"></i>
+            <span class="step-title">YOU</span>
+          </div>
+        </div>
+      </main>
+
+      <footer class="hero-footer">
+        <div class="mouse-icon">
+          <div class="mouse-wheel"></div>
+        </div>
+        <span>Scroll Down</span>
+      </footer>
+    </div>
+  </div>
+
+  <section class="creative-banner">
+    <p>Roast & Root Experience</p>
+    <h2>GOOD COFFEE.<br />BETTER CONNECTIONS.</h2>
+    <div style="font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: #a6a297; margin-bottom: 14px;">Follow the journey</div>
+    <div class="social-links">
+      <a href="#">Instagram</a>
+      <span>•</span>
+      <a href="#">Facebook</a>
+      <span>•</span>
+      <a href="#">TikTok</a>
+    </div>
+  </section>
+
+  <footer class="master-footer">
+    <div class="footer-brand">
+      <h3>Roast & Root</h3>
+      <span>COFFEE • NATURE • YOU</span>
+    </div>
+
+    <div class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="pages/about.html">About</a>
+      <a href="pages/menu.html">Menu</a>
+      <a href="pages/gallery.html">Gallery</a>
+      <a href="pages/contact.html">Contact</a>
+    </div>
+
+    <div class="footer-bottom">
+      <div>&copy; 2026 Roast & Root. All rights reserved.</div>
+      <div>Crafted with intention.</div>
+    </div>
+  </footer>
+
+  <!-- Cart Drawer -->
+  <div class="cart-backdrop" id="cartBackdrop" onclick="toggleCart()"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3>Your Selection</h3>
+      <div class="close-cart" onclick="toggleCart()">&times;</div>
+    </div>
+    <div class="cart-items-list" id="cartItemsList"></div>
+    <div class="cart-footer">
+      <div class="cart-total-row">
+        <span>Total Amount</span>
+        <strong id="cartTotal">$0.00</strong>
+      </div>
+      <button class="btn-checkout" onclick="checkoutOrder()">
+        <span>Checkout & Order</span>
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Checkout & Receipt Modals -->
+  <div class="modal-backdrop" id="checkoutModal" onclick="closeCheckoutModal()">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <h3>Complete Your Order</h3>
+        <span class="modal-close" onclick="closeCheckoutModal()">&times;</span>
+      </div>
+      <form class="modal-body" onsubmit="submitCheckout(event)">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" id="custName" class="form-control" placeholder="e.g. Sarah Ahmad" required />
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" id="custPhone" class="form-control" placeholder="07XXXXXXXX" required />
+        </div>
+        <div class="form-group">
+          <label>Delivery Address / Table No.</label>
+          <input type="text" id="custAddress" class="form-control" placeholder="Amman, 7th Circle or Table 4" required />
+        </div>
+        <div class="custom-group">
+          <label>Payment Method</label>
+          <div class="option-pills" id="payOptions">
+            <button type="button" class="pill active" onclick="selectPill(this, 'pay')">Cash on Delivery</button>
+            <button type="button" class="pill" onclick="selectPill(this, 'pay')">CliQ / Mobile Pay</button>
+          </div>
+        </div>
+        <div class="custom-price-preview">
+          <span>Order Total</span>
+          <strong id="checkoutFinalTotal">$0.00</strong>
+        </div>
+        <button type="submit" class="btn-confirm-add">Confirm & Place Order</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="receiptModal" onclick="closeReceiptModal()">
+    <div class="modal-box receipt-card" onclick="event.stopPropagation()">
+      <div class="receipt-header">
+        <div class="receipt-logo"><i class="fa-brands fa-pagelines"></i></div>
+        <h3>ROAST & ROOT</h3>
+        <p>COFFEE • NATURE • YOU</p>
+        <span class="receipt-divider">••••••••••••••••••••••••••••••••</span>
+      </div>
+      <div class="receipt-details" id="receiptContent"></div>
+      <div class="receipt-actions">
+        <button class="btn-whatsapp-order" onclick="sendToWhatsApp()">
+          <i class="fa-brands fa-whatsapp"></i> Send via WhatsApp
+        </button>
+        <button class="btn-secondary-receipt" onclick="closeReceiptModal()">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
 </html>

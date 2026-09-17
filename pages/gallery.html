@@ -1,163 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gallery — Roast &amp; Root</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery — Roast & Root</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- External Stylesheets -->
   <link rel="stylesheet" href="../styles/global.css">
+  <link rel="stylesheet" href="../styles/gallery.css">
 </head>
 <body>
 
-  <!-- Header & Navigation -->
+  <!-- ================= HEADER ================= -->
   <header>
-    <a href="../index.html">
-      <p>🌿 <strong>ROAST &amp; ROOT</strong></p>
-      <p><small>Coffee · Nature · You</small></p>
+    <a href="../index.html" class="brand">
+      <div class="brand-logo"><i class="fa-brands fa-pagelines"></i></div>
+      <div class="brand-text">
+        <h2>Roast & Root</h2>
+        <span>Coffee • Nature • You</span>
+      </div>
     </a>
 
     <nav>
-      <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+      <a href="../index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="menu.html">Menu</a>
+      <a href="gallery.html" class="active">Gallery</a>
+      <a href="contact.html">Contact</a>
     </nav>
 
-    <div>
-      <button type="button" aria-label="Open menu">☰</button>
-      <button type="button" aria-label="Search">🔍</button>
-      <button type="button" aria-label="Cart">🛒</button>
-      <button type="button" aria-label="User account">👤</button>
-      <a href="menu.html">Order Now</a>
+    <div class="header-actions">
+      <div class="cart-trigger-wrapper" onclick="toggleCart()">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span class="cart-badge" id="cartBadge">0</span>
+      </div>
+      <a href="menu.html" class="btn-order">Order Now</a>
     </div>
   </header>
 
-  <main>
-    <!-- Gallery Intro -->
-    <section>
-      <p><small>VISUAL JOURNEY</small></p>
-      <h1>A Glimpse Into <em>Our World.</em></h1>
-      <p>Where every cup has a story — from mountain soils to quiet moments.</p>
-    </section>
-
-    <!-- Gallery Categories Filter -->
-    <nav aria-label="Gallery Categories">
-      <ul>
-        <li><button type="button">ALL</button></li>
-        <li><button type="button">01 — THE ORIGIN</button></li>
-        <li><button type="button">02 — THE ROAST</button></li>
-        <li><button type="button">03 — THE BREW</button></li>
-        <li><button type="button">04 — THE SPACE</button></li>
-        <li><button type="button">05 — THE MOMENTS</button></li>
-      </ul>
-    </nav>
-
-    <!-- Gallery Items Grid -->
-    <section>
-      <!-- 01: The Origin -->
-      <figure>
-        <img src="../images/origin-harvest.jpg" alt="Hand picking ripe red coffee cherries on a mountain farm" width="600" height="1066">
-        <figcaption>
-          <small>01 — THE ORIGIN</small>
-          <h3>Highland Harvest</h3>
-          <p>Hand-picked heirloom cherries from high-altitude slopes.</p>
-        </figcaption>
-      </figure>
-
-      <!-- 02: The Roast (Machine) -->
-      <figure>
-        <img src="../images/roast-machine.jpg" alt="Freshly roasted coffee beans pouring from the traditional roaster" width="600" height="1066">
-        <figcaption>
-          <small>02 — THE ROAST</small>
-          <h3>The Artisan Roaster</h3>
-          <p>Precision heat unlocking deep aromas and character.</p>
-        </figcaption>
-      </figure>
-
-      <!-- 02: The Roast (Extraction) -->
-      <figure>
-        <img src="../images/roast-espresso-flow.jpg" alt="Rich espresso extraction flowing smoothly into a ceramic mug" width="600" height="1066">
-        <figcaption>
-          <small>02 — THE ROAST</small>
-          <h3>Golden Extraction</h3>
-          <p>The perfect pull with velvety golden crema.</p>
-        </figcaption>
-      </figure>
-
-      <!-- 03: The Brew (Rooted Latte) -->
-      <figure>
-        <img src="../images/brew-rooted-latte.jpg" alt="Rooted latte with delicate latte art topped with crushed pistachio" width="600" height="1066">
-        <figcaption>
-          <small>03 — THE BREW</small>
-          <h3>Rooted Latte</h3>
-          <p>Signature espresso with pistachio, vanilla, and creamy milk.</p>
-        </figcaption>
-      </figure>
-
-      <!-- 03: The Brew (Matcha Garden) -->
-      <figure>
-        <img src="../images/brew-matcha-garden.jpg" alt="Ceremonial matcha latte surrounded by botanicals and open notebook" width="600" height="1066">
-        <figcaption>
-          <small>03 — THE BREW</small>
-          <h3>Matcha Garden</h3>
-          <p>Pure ceremonial matcha balanced with oat milk and botanicals.</p>
-        </figcaption>
-      </figure>
-
-      <!-- 03: The Brew / Oven (Pastries) -->
-      <figure>
-        <img src="../images/root-bakery.jpg" alt="Freshly baked croissant, cinnamon roll, and pistachio cake with black coffee" width="600" height="1066">
-        <figcaption>
-          <small>05 — THE ROOT</small>
-          <h3>Morning Bakes</h3>
-          <p>Flaky croissants and daily pastries fresh from our oven.</p>
-        </figcaption>
-      </figure>
-
-      <!-- 04: The Space -->
-      <figure>
-        <img src="../images/space-interior.jpg" alt="Warm wooden cafe interior with large glass windows and cozy tables" width="600" height="1066">
-        <figcaption>
-          <small>04 — THE SPACE</small>
-          <h3>Sanctuary in the City</h3>
-          <p>Warm timber, soft sunlight, and lush green plants.</p>
-        </figcaption>
-      </figure>
-
-      <!-- 05: The Moments -->
-      <figure>
-        <img src="../images/moments-journal.jpg" alt="Guest journaling beside sunlit window with a warm coffee cup" width="600" height="1066">
-        <figcaption>
-          <small>05 — THE MOMENTS</small>
-          <h3>Quiet Reflections</h3>
-          <p>Slow mornings, honest thoughts, and warm sips.</p>
-        </figcaption>
-      </figure>
-    </section>
-  </main>
-
-  <!-- Global Footer -->
-  <footer>
-    <div>
-      <p>🌿 <strong>ROAST &amp; ROOT</strong></p>
-      <p><small>Coffee · Nature · You</small></p>
+  <!-- ================= GALLERY SECTION ================= -->
+  <section class="gallery-section">
+    <div class="section-header">
+      <span class="section-kicker">Visual Journey</span>
+      <h2 class="section-title">A Glimpse Into <span>Our World.</span></h2>
+      <p class="section-subtitle">Where every cup, leaf, and roasted bean carries an authentic story.</p>
     </div>
 
-    <ul>
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="menu.html">Menu</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
+    <div class="gallery-filter-bar">
+      <button class="gallery-filter-btn active" onclick="filterGallery('all', this)">All Stories</button>
+      <button class="gallery-filter-btn" onclick="filterGallery('origin', this)">01 — The Origin 🌱</button>
+      <button class="gallery-filter-btn" onclick="filterGallery('roast', this)">02 — The Roast 🔥</button>
+      <button class="gallery-filter-btn" onclick="filterGallery('brew', this)">03 — The Brew ☕</button>
+      <button class="gallery-filter-btn" onclick="filterGallery('space', this)">04 — The Space 🪵</button>
+      <button class="gallery-filter-btn" onclick="filterGallery('moments', this)">05 — The Moments ✨</button>
+    </div>
 
-    <div>
-      <p>GOOD COFFEE. BETTER CONNECTIONS.</p>
-      <p><small>© 2026 Roast &amp; Root. All rights reserved.</small></p>
+    <div class="masonry-wrapper" id="galleryGrid">
+      <!-- 01. The Origin -->
+      <div class="masonry-item" data-cat="origin" onclick="openLightbox(this)">
+        <img src="../images/origin-harvest.jpg" alt="Handpicking Coffee Cherries" />
+        <div class="masonry-overlay">
+          <span class="masonry-tag">01 — The Origin</span>
+          <h4 class="masonry-caption">Cultivated In High Soils</h4>
+        </div>
+      </div>
+
+      <!-- 02. The Roast (Roasting Machine) -->
+      <div class="masonry-item" data-cat="roast" onclick="openLightbox(this)">
+        <img src="../images/roast-machine.jpg" alt="Roasting Beans Machine" />
+        <div class="masonry-overlay">
+          <span class="masonry-tag">02 — The Roast</span>
+          <h4 class="masonry-caption">Slow Fire & Deep Aromas</h4>
+        </div>
+      </div>
+
+      <!-- 03. The Roast / Brew (Espresso Extraction) -->
+      <div class="masonry-item" data-cat="roast" onclick="openLightbox(this)">
+        <img src="../images/roast-espresso-flow.jpg" alt="Fresh Espresso Flow" />
+        <div class="masonry-overlay">
+          <span class="masonry-tag">02 — The Roast</span>
+          <h4 class="masonry-caption">Golden Crema Extraction</h4>
+        </div>
+      </div>
+
+      <!-- 04. The Brew (Matcha Garden) -->
+      <div class="masonry-item" data-cat="brew" onclick="openLightbox(this)">
+        <img src="../images/brew-matcha-garden.jpg" alt="Matcha Garden Botanical Brew" />
+        <div class="masonry-overlay">
+          <span class="masonry-tag">03 — The Brew</span>
+          <h4 class="masonry-caption">Matcha Garden Infusion</h4>
+        </div>
+      </div>
+
+      <!-- 05. The Brew (Rooted Latte) -->
+      <div class="masonry-item" data-cat="brew" onclick="openLightbox(this)">
+        <img src="../images/brew-rooted-latte.jpg" alt="Rooted Latte With Pistachio" />
+        <div class="masonry-overlay">
+          <span class="masonry-tag">03 — The Brew</span>
+          <h4 class="masonry-caption">Handcrafted Rooted Latte</h4>
+        </div>
+      </div>
+
+      <!-- 06. The Space -->
+      <div class="masonry-item" data-cat="space" onclick="openLightbox(this)">
+        <img src="../images/space-interior.jpg" alt="Warm Wooden Interior" />
+        <div class="masonry-overlay">
+          <span class="masonry-tag">04 — The Space</span>
+          <h4 class="masonry-caption">Wood, Light & Botanicals</h4>
+        </div>
+      </div>
+
+      <!-- 07. The Moments (Journaling) -->
+      <div class="masonry-item" data-cat="moments" onclick="openLightbox(this)">
+        <img src="../images/moments-journal.jpg" alt="Journaling with Coffee" />
+        <div class="masonry-overlay">
+          <span class="masonry-tag">05 — The Moments</span>
+          <h4 class="masonry-caption">A Pause In The Rush</h4>
+        </div>
+      </div>
+
+      <!-- 08. The Moments (Bakery & Pastries) -->
+      <div class="masonry-item" data-cat="moments" onclick="openLightbox(this)">
+        <img src="../images/root-bakery.jpg" alt="Fresh Pastries and Coffee" />
+        <div class="masonry-overlay">
+          <span class="masonry-tag">05 — The Moments</span>
+          <h4 class="masonry-caption">From The Oven & Shared</h4>
+        </div>
+      </div>
+    </div>
+
+    <p class="gallery-footer-quote">
+      From bean &rarr; to roast &rarr; to brew &rarr; to you.
+    </p>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox-modal" id="lightboxModal" onclick="closeLightbox()">
+      <div class="lightbox-close">&times;</div>
+      <img class="lightbox-img" id="lightboxImg" src="" alt="" onclick="event.stopPropagation()" />
+      <p class="lightbox-caption" id="lightboxCaption"></p>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="master-footer">
+    <div class="footer-brand">
+      <h3>Roast & Root</h3>
+      <span>COFFEE • NATURE • YOU</span>
+    </div>
+
+    <div class="footer-nav">
+      <a href="../index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="menu.html">Menu</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="footer-bottom">
+      <div>&copy; 2026 Roast & Root. All rights reserved.</div>
+      <div>Crafted with intention.</div>
     </div>
   </footer>
 
+  <!-- ================= SLIDE-OVER CART DRAWER ================= -->
+  <div class="cart-backdrop" id="cartBackdrop" onclick="toggleCart()"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3>Your Selection</h3>
+      <div class="close-cart" onclick="toggleCart()">&times;</div>
+    </div>
+    <div class="cart-items-list" id="cartItemsList"></div>
+    <div class="cart-footer">
+      <div class="cart-total-row">
+        <span>Total Amount</span>
+        <strong id="cartTotal">$0.00</strong>
+      </div>
+      <button class="btn-checkout" onclick="checkoutOrder()">
+        <span>Checkout & Order</span>
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </div>
+  </aside>
+
+  <!-- ================= CHECKOUT & RECEIPT MODALS ================= -->
+  <div class="modal-backdrop" id="checkoutModal" onclick="closeCheckoutModal()">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <h3>Complete Your Order</h3>
+        <span class="modal-close" onclick="closeCheckoutModal()">&times;</span>
+      </div>
+      <form class="modal-body" onsubmit="submitCheckout(event)">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" id="custName" class="form-control" placeholder="e.g. Sarah Ahmad" required />
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" id="custPhone" class="form-control" placeholder="07XXXXXXXX" required />
+        </div>
+        <div class="form-group">
+          <label>Delivery Address / Table No.</label>
+          <input type="text" id="custAddress" class="form-control" placeholder="Amman, 7th Circle or Table 4" required />
+        </div>
+        <div class="custom-group">
+          <label>Payment Method</label>
+          <div class="option-pills" id="payOptions">
+            <button type="button" class="pill active" onclick="selectPill(this, 'pay')">Cash on Delivery</button>
+            <button type="button" class="pill" onclick="selectPill(this, 'pay')">CliQ / Mobile Pay</button>
+          </div>
+        </div>
+        <div class="custom-price-preview">
+          <span>Order Total</span>
+          <strong id="checkoutFinalTotal">$0.00</strong>
+        </div>
+        <button type="submit" class="btn-confirm-add">Confirm & Place Order</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="receiptModal" onclick="closeReceiptModal()">
+    <div class="modal-box receipt-card" onclick="event.stopPropagation()">
+      <div class="receipt-header">
+        <div class="receipt-logo"><i class="fa-brands fa-pagelines"></i></div>
+        <h3>ROAST & ROOT</h3>
+        <p>COFFEE • NATURE • YOU</p>
+        <span class="receipt-divider">••••••••••••••••••••••••••••••••</span>
+      </div>
+      <div class="receipt-details" id="receiptContent"></div>
+      <div class="receipt-actions">
+        <button class="btn-whatsapp-order" onclick="sendToWhatsApp()">
+          <i class="fa-brands fa-whatsapp"></i> Send via WhatsApp
+        </button>
+        <button class="btn-secondary-receipt" onclick="closeReceiptModal()">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- External Script -->
+  <script src="../main.js"></script>
 </body>
 </html>

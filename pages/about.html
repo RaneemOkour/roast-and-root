@@ -1,110 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Roast & Root</title>
-    <link rel="stylesheet" href="../styles/global.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us — Roast & Root</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../styles/global.css">
+  <link rel="stylesheet" href="../styles/about.css">
 </head>
 <body>
-    <!-- Header & Navigation -->
-    <header>
-      <a href="../index.html">
-        <p>🌿 <strong>ROAST & ROOT</strong></p>
-        <p><small>Coffee · Nature · You</small></p>
-      </a>
-
-      <nav>
-        <ul>
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="menu.html">Menu</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-
-      <div>
-        <button type="button" aria-label="Open menu">☰</button>
-        <button type="button" aria-label="Search">🔍</button>
-        <button type="button" aria-label="Cart">🛒</button>
-        <button type="button" aria-label="User account">👤</button>
-        <a href="menu.html" class="button">Order Now</a>
+  <header>
+    <a href="../index.html" class="brand">
+      <div class="brand-logo"><i class="fa-brands fa-pagelines"></i></div>
+      <div class="brand-text">
+        <h2>Roast & Root</h2>
+        <span>Coffee • Nature • You</span>
       </div>
-    </header>
-    <main>
-        <!-- Journey Intro Section -->
-        <section>
-            <p><small>OUR JOURNEY</small></p>
-            <h1>FROM EARTH.<br>TO ROAST. <em>TO YOU.</em></h1>
-            <p>Every cup has a beginning. Here is the path of honesty, devotion, and craft that brings our coffee to your hands.</p>
-        </section>
-    <!-- Cards stages-->
-    <section id="pillars">
-        <article>
-            <header>
-                <span>01 - ROOTED</span>
-                <span aria-hidden="true">🌱</span>
-            </header>
-            <p><small>IT STARTS WITH THE EARTH</small></p>
-            <h2>Rooted</h2>
-            <p>We choose beans with character, grown with care and shaped by their origin.</p>
-        </article>
-         <article>
-            <header>
-                <span>02 - ROASTED</span>
-                <span aria-hidden="true">🔥</span>
-            </header>
-            <p><small>THEN COMES THE CRAFT</small></p>
-            <h2>Roasted</h2>
-            <p>Every bean is roasted to reveal its deepest notes, aromas, and stories.</p>
-        </article>
-         <article>
-            <header>
-                <span>03 - BREWED</span>
-                <span aria-hidden="true">☕</span>
-            </header>
-            <p><small>AND FINALLY, THE MOMENT</small></p>
-            <h2>Brewed</h2>
-            <p>A warm cup, a quiet pause, a little escape from the rush.</p>
-        </article>
-         <article>
-            <header>
-                <span>04 - SHARED</span>
-                <span aria-hidden="true">🤍</span>
-            </header>
-            <p><small>BECAUSE THE BEST COFFEE</small></p>
-            <h2>Shared</h2>
-            <p>Isn't meant to be rushed. It's meant to be experienced - and shared.</p>
-        </article>
-    </section>
-    <!--Quote-->
-    <section id="brand-quote">
-        <blockquote>
-            <p>“Roast &amp; Root - Rooted in nature. Crafted with purpose. Served for the moment.”</p>
-        </blockquote>
-    </section>
-    </main>
-    <!-- Global Footer -->
-    <footer>
-      <div>
-        <p>🌿 <strong>ROAST & ROOT</strong></p>
-        <p><small>Coffee · Nature · You</small></p>
+    </a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="menu.html">Menu</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <div class="cart-trigger-wrapper" onclick="toggleCart()">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span class="cart-badge" id="cartBadge">0</span>
       </div>
+      <a href="menu.html" class="btn-order">Order Now</a>
+    </div>
+  </header>
 
-      <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+  <section class="about-section">
+    <div class="section-header">
+      <span class="section-kicker">Our Journey</span>
+      <h2 class="section-title">FROM EARTH. <br />TO ROAST. <span>TO YOU.</span></h2>
+      <p class="section-subtitle">
+        Every cup has a beginning. Here is the path of honesty, devotion, and craft that brings our coffee to your hands.
+      </p>
+    </div>
 
-      <div>
-        <p>GOOD COFFEE. BETTER CONNECTIONS.</p>
-        <p><small>© 2026 Roast & Root. All rights reserved.</small></p>
+    <div class="journey-grid">
+      <div class="journey-card">
+        <div>
+          <div class="card-top">
+            <span class="step-number">01 — ROOTED</span>
+            <div class="card-icon"><i class="fa-solid fa-seedling"></i></div>
+          </div>
+          <div class="card-subtitle">It starts with the earth</div>
+          <h3 class="card-title">Rooted</h3>
+          <p class="card-desc">We choose beans with character, grown with care and shaped by their origin.</p>
+        </div>
       </div>
-    </footer>
-    
+      <div class="journey-card">
+        <div>
+          <div class="card-top">
+            <span class="step-number">02 — ROASTED</span>
+            <div class="card-icon"><i class="fa-solid fa-fire"></i></div>
+          </div>
+          <div class="card-subtitle">Then comes the craft</div>
+          <h3 class="card-title">Roasted</h3>
+          <p class="card-desc">Every bean is roasted to reveal its deepest notes, aromas, and stories.</p>
+        </div>
+      </div>
+      <div class="journey-card">
+        <div>
+          <div class="card-top">
+            <span class="step-number">03 — BREWED</span>
+            <div class="card-icon"><i class="fa-solid fa-mug-hot"></i></div>
+          </div>
+          <div class="card-subtitle">And finally, the moment</div>
+          <h3 class="card-title">Brewed</h3>
+          <p class="card-desc">A warm cup, a quiet pause, a little escape from the rush.</p>
+        </div>
+      </div>
+      <div class="journey-card">
+        <div>
+          <div class="card-top">
+            <span class="step-number">04 — SHARED</span>
+            <div class="card-icon"><i class="fa-solid fa-heart"></i></div>
+          </div>
+          <div class="card-subtitle">Because the best coffee</div>
+          <h3 class="card-title">Shared</h3>
+          <p class="card-desc">Isn't meant to be rushed. It's meant to be experienced — and shared.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-quote-box">
+      <p>“Roast & Root — Rooted in nature. Crafted with purpose. Served for the moment.”</p>
+    </div>
+  </section>
+
+  <footer class="master-footer">
+    <div class="footer-brand">
+      <h3>Roast & Root</h3>
+      <span>COFFEE • NATURE • YOU</span>
+    </div>
+    <div class="footer-nav">
+      <a href="../index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="menu.html">Menu</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 Roast & Root. All rights reserved.</div>
+      <div>Crafted with intention.</div>
+    </div>
+  </footer>
+
+  <script src="../main.js"></script>
 </body>
 </html>

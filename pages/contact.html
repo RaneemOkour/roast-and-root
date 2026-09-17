@@ -1,149 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact — Roast &amp; Root</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us — Roast & Root</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="../styles/global.css">
+  <link rel="stylesheet" href="../styles/contact.css">
 </head>
 <body>
-
-  <!-- Header & Navigation -->
   <header>
-    <a href="../index.html">
-      <p>🌿 <strong>ROAST &amp; ROOT</strong></p>
-      <p><small>Coffee · Nature · You</small></p>
+    <a href="../index.html" class="brand">
+      <div class="brand-logo"><i class="fa-brands fa-pagelines"></i></div>
+      <div class="brand-text">
+        <h2>Roast & Root</h2>
+        <span>Coffee • Nature • You</span>
+      </div>
     </a>
-
     <nav>
-      <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+      <a href="../index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="menu.html">Menu</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html" class="active">Contact</a>
     </nav>
-
-    <div>
-      <button type="button" aria-label="Open menu">☰</button>
-      <button type="button" aria-label="Search">🔍</button>
-      <button type="button" aria-label="Cart">🛒</button>
-      <button type="button" aria-label="User account">👤</button>
-      <a href="menu.html">Order Now</a>
+    <div class="header-actions">
+      <div class="cart-trigger-wrapper" onclick="toggleCart()">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span class="cart-badge" id="cartBadge">0</span>
+      </div>
+      <a href="menu.html" class="btn-order">Order Now</a>
     </div>
   </header>
 
-  <main>
-    <!-- Page Header Intro -->
-    <section>
-      <p><small>FIND US</small></p>
-      <h1>Come Find <em>Your Root.</em></h1>
-      <p>Your next favorite cup is waiting. Step in, breathe, and unwind.</p>
-    </section>
-
-    <!-- Contact Details & Form Section -->
-    <section>
-      <!-- Left Column: Info & Hours -->
-      <div>
-        <h2>Get in Touch</h2>
-
-        <address>
-          <div>
-            <span>📍</span>
-            <h3>VISIT US</h3>
-            <p>Forest Avenue, Amman<br>Jordan</p>
-          </div>
-
-          <div>
-            <span>📞</span>
-            <h3>CALL US</h3>
-            <p><a href="tel:+962790000000">+962 79 000 0000</a></p>
-          </div>
-
-          <div>
-            <span>✉️</span>
-            <h3>SAY HELLO</h3>
-            <p><a href="mailto:hello@roastandroot.com">hello@roastandroot.com</a></p>
-          </div>
-        </address>
-
-        <!-- Operating Hours Card -->
-        <aside>
-          <div>
-            <h4>MON — FRI</h4>
-            <time>07:00 AM – 10:00 PM</time>
-          </div>
-          <div>
-            <h4>SAT — SUN</h4>
-            <time>08:00 AM – 11:00 PM</time>
-          </div>
-        </aside>
-      </div>
-
-      <!-- Right Column: Let's Connect Form -->
-      <section>
-        <h2>Let's Connect</h2>
-
-        <form action="#" method="post">
-          <div>
-            <label for="user-name">YOUR NAME</label>
-            <input type="text" id="user-name" name="name" placeholder="Enter your name" required>
-          </div>
-
-          <div>
-            <label for="user-email">EMAIL ADDRESS</label>
-            <input type="email" id="user-email" name="email" placeholder="Enter your email" required>
-          </div>
-
-          <div>
-            <label for="user-message">MESSAGE</label>
-            <textarea id="user-message" name="message" rows="5" placeholder="Tell us what's on your mind..." required></textarea>
-          </div>
-
-          <button type="submit">SEND MESSAGE →</button>
-        </form>
-      </section>
-    </section>
-
-    <!-- Atmospheric Experience Banner (Image 2) -->
-    <section>
-      <p><small>ROAST &amp; ROOT EXPERIENCE</small></p>
-      <h2>GOOD COFFEE.<br>BETTER CONNECTIONS.</h2>
-
-      <nav aria-label="Social Media">
-        <p><small>FOLLOW THE JOURNEY</small></p>
-        <ul>
-          <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li>
-          <li><a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a></li>
-          <li><a href="https://tiktok.com" target="_blank" rel="noopener">TikTok</a></li>
-        </ul>
-      </nav>
-    </section>
-  </main>
-
-  <!-- Global Footer -->
-  <footer>
-    <div>
-      <p>🌿 <strong>ROAST &amp; ROOT</strong></p>
-      <p><small>Coffee · Nature · You</small></p>
+  <section class="contact-section">
+    <div class="section-header">
+      <span class="section-kicker">Find Us</span>
+      <h2 class="section-title">Come Find <span>Your Root.</span></h2>
+      <p class="section-subtitle">Your next favorite cup is waiting. Step in, breathe, and unwind.</p>
     </div>
 
-    <nav aria-label="Footer Navigation">
-      <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="info-card">
+          <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+          <div class="info-detail">
+            <h4>Visit Us</h4>
+            <p>Forest Avenue, Amman<br />Jordan</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+          <div class="info-detail">
+            <h4>Call Us</h4>
+            <p>+962 79 000 0000</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+          <div class="info-detail">
+            <h4>Say Hello</h4>
+            <p>hello@roastandroot.com</p>
+          </div>
+        </div>
+        <div class="hours-grid">
+          <div class="hour-block">
+            <span>MON — FRI</span>
+            <strong>07:00 AM — 10:00 PM</strong>
+          </div>
+          <div class="hour-block">
+            <span>SAT — SUN</span>
+            <strong>08:00 AM — 11:00 PM</strong>
+          </div>
+        </div>
+      </div>
 
-    <div>
-      <p><small>© 2026 Roast &amp; Root. All rights reserved.</small></p>
-      <p><small>Crafted with intention.</small></p>
+      <div class="contact-form-box">
+        <h3>Let's Connect</h3>
+        <form onsubmit="handleContact(event)">
+          <div class="form-group">
+            <label>Your Name</label>
+            <input type="text" class="form-control" placeholder="Enter your name" required />
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" class="form-control" placeholder="Enter your email" required />
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea class="form-control" placeholder="Tell us what's on your mind..." required></textarea>
+          </div>
+          <button type="submit" class="btn-send">
+            <span>Send Message</span>
+            <i class="fa-solid fa-arrow-right-long"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="master-footer">
+    <div class="footer-brand">
+      <h3>Roast & Root</h3>
+      <span>COFFEE • NATURE • YOU</span>
+    </div>
+    <div class="footer-nav">
+      <a href="../index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="menu.html">Menu</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 Roast & Root. All rights reserved.</div>
+      <div>Crafted with intention.</div>
     </div>
   </footer>
 
+  <script src="../main.js"></script>
 </body>
 </html>
