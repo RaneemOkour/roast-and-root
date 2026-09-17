@@ -1,0 +1,170 @@
+/* ==========================================================================
+   ROAST & ROOT — Global Styles & Design Tokens
+   ========================================================================== */
+
+/* 1. Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  --primary-forest: #3f4a2f;       /* Deep Forest Green */
+  --secondary-olive: #7d8752;      /* Olive / Sage */
+  --accent-olive-glow: #6c7849;    /* Highlight Button Green */
+  --accent-gold: #c5a059;          /* Muted Gold / Coffee Warmth */
+  
+  --bg-darker: #0b0c0a;            /* Main Background (Dark) */
+  --card-bg: #121410;              /* Card Background */
+  --border-subtle: rgba(255, 255, 255, 0.08);
+
+  --text-light: #f5f3ee;           /* Warm Ivory */
+  --text-muted: #8d9285;           /* Subtle Gray-Green */
+
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-darker);
+  color: var(--text-light);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 4. (Global Header) */
+header {
+  padding: 18px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-subtle);
+  background: rgba(11, 12, 10, 0.85);
+  backdrop-filter: blur(14px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header a {
+  text-decoration: none;
+  color: var(--text-light);
+}
+
+header p strong {
+  font-size: 1.1rem;
+  letter-spacing: 1.5px;
+}
+
+header p small {
+  display: block;
+  font-size: 0.65rem;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+}
+
+header nav ul {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+}
+
+header nav a {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+header nav a:hover {
+  color: var(--text-light);
+}
+
+header div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+header button {
+  background: transparent;
+  border: 1px solid var(--border-subtle);
+  color: var(--text-light);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+header button:hover {
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+}
+
+header a[href*="menu.html"]:last-child {
+  background: var(--accent-gold);
+  color: #0b0c0a;
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: background 0.3s ease;
+}
+
+header a[href*="menu.html"]:last-child:hover {
+  background: #b8934b;
+}
+
+/* 5. (Global Footer) */
+footer {
+  margin-top: auto;
+  padding: 50px 24px;
+  border-top: 1px solid var(--border-subtle);
+  background: var(--card-bg);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+footer a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: var(--text-light);
+}
+
+footer ul {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+footer p {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+}
