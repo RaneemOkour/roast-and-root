@@ -1,3 +1,18 @@
+/* ================= 0. QR TABLE DETECTION ================= */
+// استخراج رقم الطاولة تلقائياً من الرابط: ?table=5
+const urlParams = new URLSearchParams(window.location.search);
+const tableNumber = urlParams.get('table');
+
+document.addEventListener('DOMContentLoaded', () => {
+  const addressField = document.getElementById('custAddress');
+  if (tableNumber && addressField) {
+    addressField.value = `Table ${tableNumber} (Dine-in)`;
+    addressField.readOnly = true;
+    addressField.style.opacity = '0.85';
+    addressField.style.cursor = 'not-allowed';
+  }
+});
+
 /* ================= 1. MENU DATA ================= */
 const menuData = {
   signatures: [
@@ -41,7 +56,7 @@ const menuData = {
 /* ================= 2. MENU RENDERING ================= */
 function renderMenu(category) {
   const container = document.getElementById('menuContainer');
-  if (!container) return; // تحقق لعدم إيقاف السكربت في الصفحات الأخرى
+  if (!container) return;
 
   const items = menuData[category] || [];
   container.innerHTML = items.map(item => `
@@ -69,7 +84,6 @@ function filterMenu(category, element) {
   renderMenu(category);
 }
 
-// استدعاء المنيو فقط عند التواجد بصفحة المنيو
 if (document.getElementById('menuContainer')) {
   renderMenu('signatures');
 }
@@ -227,6 +241,13 @@ function checkoutOrder() {
   const cartTotal = document.getElementById('cartTotal');
   if (checkoutTotal && cartTotal) checkoutTotal.innerText = cartTotal.innerText;
 
+  // إذا وصل الزبون عبر كود QR يتم تأكيد الطاولة في النموذج
+  const addressField = document.getElementById('custAddress');
+  if (tableNumber && addressField) {
+    addressField.value = `Table ${tableNumber} (Dine-in)`;
+    addressField.readOnly = true;
+  }
+
   const checkoutModal = document.getElementById('checkoutModal');
   if (checkoutModal) checkoutModal.classList.add('open');
 }
@@ -247,6 +268,7 @@ function submitCheckout(e) {
     name,
     phone,
     address,
+    table: tableNumber || null,
     payment: selectedPayment,
     items: [...cart],
     total
@@ -296,6 +318,9 @@ function sendToWhatsApp() {
 
   let msg = `🌿 *NEW ORDER — ROAST & ROOT*\n`;
   msg += `---------------------------------\n`;
+  if (lastOrderData.table) {
+    msg += `🪑 *Order Type:* Dine-in (Table ${lastOrderData.table})\n`;
+  }
   msg += `👤 *Customer:* ${lastOrderData.name}\n`;
   msg += `📞 *Phone:* ${lastOrderData.phone}\n`;
   msg += `📍 *Destination:* ${lastOrderData.address}\n`;
@@ -307,9 +332,9 @@ function sendToWhatsApp() {
   });
   msg += `---------------------------------\n`;
   msg += `💰 *Total Amount:* ${lastOrderData.total}\n\n`;
-  msg += `Crafted with intention.`;
+  msg += `Rooted in Every Sip.`;
 
-  const phone = "962790000000";
+  const phone = "962790000000"; // استبدليه برقم واتساب المقهى الفعلي
   const url = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
   window.open(url, '_blank');
 }
